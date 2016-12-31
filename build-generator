@@ -1,0 +1,62 @@
+#!/bin/sh -x
+
+###
+# Script will install a small HTML5 project
+# Running: ~/ . project [project-name] [type]
+# by appending the . this project will jump into the directory path created at /project/dev
+###
+
+###
+## types
+#
+# exp           - Basic fast deploy experiment mode, designed for css and minimal js tests
+# browserify    - The Future - browserify for node in the frontend / common js modules
+# express       - Creates a skeleton express app
+
+# assign default type if none given
+TYPE=${2:-exp}
+LOCATION=.
+
+# import relevant script
+case "$TYPE" in
+  vue)
+    cd $LOCATION
+    # set generator path
+    GENERATOR=npm-browserify-vue
+    ;;
+  *)  
+    cd $LOCATION
+    # set generator path
+    GENERATOR=npm-browserify-vue
+    ;;
+esac
+
+# clone generator
+git clone https://github.com/dev-boilerplates/$GENERATOR
+
+# remove git from clone
+cd 
+rm -R .git .gitignore
+cd ..
+
+# move clone to cwd
+mv $GENERATOR .
+
+# replace CONSTANT with project name variable in the following files
+sed "s/__PROJECTNAME/$1/" package.json > package
+sed "s/__PROJECTNAME/$1/" readme.md > readme
+
+# rename above files to their true extension
+mv package package.json
+mv readme readme.md 
+
+# build
+git init
+npm install
+
+git add .
+git commit -am 'Initialise project.'
+
+echo "Ready! -- start up a live server using 'npm start'"
+
+s . # open with sublime
