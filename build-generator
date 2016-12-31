@@ -17,12 +17,22 @@
 TYPE=${2:-exp}
 LOCATION=.
 
+mkdir $1
+cd $1
+
+cwd=$(pwd)
+
 # import relevant script
 case "$TYPE" in
   vue)
     cd $LOCATION
     # set generator path
-    GENERATOR=npm-browserify-vue
+    GENERATOR=generator--browserify-vue
+    ;;
+  vue-spa)
+    cd $LOCATION
+    # set generator path
+    GENERATOR=generator--vue-spa
     ;;
   *)  
     cd $LOCATION
@@ -35,13 +45,14 @@ esac
 git clone https://github.com/dev-boilerplates/$GENERATOR
 
 # remove git from clone
-cd 
-rm -R .git .gitignore
+cd $GENERATOR
+rm -Rf .git .gitignore
 cd ..
 
-# move clone to cwd
-mv $GENERATOR .
-
+# move clone to cwd then kill
+cp -a $GENERATOR/. $cwd
+#cp -R $GENERATOR $cwd
+rm -Rf $GENERATOR
 # replace CONSTANT with project name variable in the following files
 sed "s/__PROJECTNAME/$1/" package.json > package
 sed "s/__PROJECTNAME/$1/" readme.md > readme
