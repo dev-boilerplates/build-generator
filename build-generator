@@ -46,7 +46,7 @@ git clone https://github.com/dev-boilerplates/$GENERATOR
 
 # remove git from clone
 cd $GENERATOR
-rm -Rf .git .gitignore
+rm -Rf .git
 cd ..
 
 # move clone to cwd then kill
