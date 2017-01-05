@@ -63,7 +63,7 @@ mv readme readme.md
 
 # setup stylesheets
 mkdir stylus
-git clone https://github.com/dev-boilerplates/stylesheet stylus
+git clone https://github.com/dev-boilerplates/stylesheets stylus
 
 # build
 git init
