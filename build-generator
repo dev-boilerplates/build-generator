@@ -24,6 +24,11 @@ cwd=$(pwd)
 
 # import relevant script
 case "$TYPE" in
+  es6)
+    cd $LOCATION
+    # set generator path
+    GENERATOR=generator--es6
+    ;;  
   vue)
     cd $LOCATION
     # set generator path
@@ -37,7 +42,7 @@ case "$TYPE" in
   *)  
     cd $LOCATION
     # set generator path
-    GENERATOR=npm-browserify-vue
+    GENERATOR=generator--es6
     ;;
 esac
 
@@ -53,6 +58,7 @@ cd ..
 cp -a $GENERATOR/. $cwd
 #cp -R $GENERATOR $cwd
 rm -Rf $GENERATOR
+
 # replace CONSTANT with project name variable in the following files
 sed "s/__PROJECTNAME/$1/" package.json > package
 sed "s/__PROJECTNAME/$1/" readme.md > readme
