@@ -61,6 +61,10 @@ sed "s/__PROJECTNAME/$1/" readme.md > readme
 mv package package.json
 mv readme readme.md 
 
+# setup stylesheets
+mkdir stylus
+git clone https://github.com/dev-boilerplates/stylesheet stylus
+
 # build
 git init
 npm install
