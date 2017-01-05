@@ -39,6 +39,11 @@ case "$TYPE" in
     # set generator path
     GENERATOR=generator--vue-spa
     ;;
+  static)
+    cd $LOCATION
+    # set generator path
+    GENERATOR=generator--static
+    ;;
   *)  
     cd $LOCATION
     # set generator path
