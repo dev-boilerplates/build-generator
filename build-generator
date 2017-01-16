@@ -44,7 +44,6 @@ case "$TYPE" in
     # set generator path
     GENERATOR=generator--static
     ;;
-  *)
   express)
     cd $LOCATION
     # set generator path
