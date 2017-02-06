@@ -49,6 +49,11 @@ case "$TYPE" in
     # set generator path
     GENERATOR=generator--express
     ;;
+  electron)
+    cd $LOCATION
+    # set generator path
+    GENERATOR=generator--electron
+    ;;
   *)  
     cd $LOCATION
     # set generator path

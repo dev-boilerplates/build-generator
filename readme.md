@@ -9,7 +9,7 @@
 ####Available stacks
 
 
-
+*   `electron` - New Electron App wrpper **Needs `generator--electron` cloning from `vonkristoff/election`**
 *	`es6` - New Basic setup using `rollup` - great for creating ES6 Classes
 *   `vue` - Vue component instance boilerplate. With NPM build scripts; browserify and ES6
 *	`vue-spa` Beyond the Basics boiler here, with solid setup for configuring an single-page-app for production
