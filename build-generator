@@ -44,6 +44,11 @@ case "$TYPE" in
     # set generator path
     GENERATOR=generator--static
     ;;
+  microsite)
+    cd $LOCATION
+    # set generator path
+    GENERATOR=generator--microsite
+    ;;
   express)
     cd $LOCATION
     # set generator path
