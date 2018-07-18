@@ -24,6 +24,11 @@ cwd=$(pwd)
 
 # import relevant script
 case "$TYPE" in
+  lambda)
+    cd $LOCATION
+    # set generator path
+    GENERATOR=generator--lambda
+    ;;  
   es6)
     cd $LOCATION
     # set generator path
