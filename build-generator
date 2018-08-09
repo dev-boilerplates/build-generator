@@ -92,9 +92,10 @@ sed "s/__PROJECTNAME/$1/" readme.md > readme
 mv package package.json
 mv readme readme.md 
 
-# setup stylesheets (unless stylus already exists)
+# setup stylesheets (ignoring previous stylesheet templates from now on)
+rm -R stylus
 mkdir -p stylus
-git clone https://github.com/dev-boilerplates/stylesheets stylus
+git clone https://github.com/dev-boilerplates/stylus stylus
 
 # build
 git init
