@@ -94,7 +94,6 @@ mv readme readme.md
 
 # setup stylesheets (ignoring previous stylesheet templates from now on)
 rm -R stylus
-mkdir -p stylus
 git clone https://github.com/dev-boilerplates/stylus stylus
 
 # build
