@@ -25,48 +25,48 @@ cwd=$(pwd)
 # import relevant script
 case "$TYPE" in
   lambda)
-    cd $LOCATION
     # set generator path
+    cd LOCATION
     GENERATOR=generator--lambda
     ;;  
   es6)
-    cd $LOCATION
     # set generator path
+    cd LOCATION
     GENERATOR=generator--es6
     ;;  
   vue)
-    cd $LOCATION
     # set generator path
+    cd LOCATION
     GENERATOR=generator--browserify-vue
     ;;
   vue-spa)
-    cd $LOCATION
     # set generator path
+    cd LOCATION
     GENERATOR=generator--vue-spa
     ;;
   static)
-    cd $LOCATION
     # set generator path
+    cd LOCATION
     GENERATOR=generator--static
     ;;
   microsite)
-    cd $LOCATION
     # set generator path
+    cd LOCATION
     GENERATOR=generator--microsite
     ;;
   express)
-    cd $LOCATION
     # set generator path
+    cd LOCATION
     GENERATOR=generator--express
     ;;
   electron)
-    cd $LOCATION
     # set generator path
+    cd LOCATION
     GENERATOR=generator--electron
     ;;
   *)  
-    cd $LOCATION
     # set generator path
+    cd LOCATION
     GENERATOR=generator--es6
     ;;
 esac
@@ -93,8 +93,11 @@ mv package package.json
 mv readme readme.md 
 
 # setup stylesheets (ignoring previous stylesheet templates from now on)
-rm -R stylus
-git clone https://github.com/dev-boilerplates/stylus stylus
+rm -Rf stylus
+git clone https://github.com/dev-boilerplates/stylus
+cd stylus
+rm -Rf .git
+cd ..
 
 # build
 git init
