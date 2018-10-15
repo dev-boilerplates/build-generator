@@ -44,7 +44,7 @@ case "$TYPE" in
     cd LOCATION
     GENERATOR=generator--vue-spa
     ;;
-  vue-spa)
+  spa)
     # set generator path
     cd LOCATION
     GENERATOR=generator--spa
