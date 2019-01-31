@@ -94,8 +94,8 @@ sed "s/__PROJECTNAME/$1/" package.json > package
 sed "s/__PROJECTNAME/$1/" readme.md > readme
 
 # rename above files to their true extension
-mv package package.json
-mv readme readme.md 
+mv -f package package.json
+mv -f readme readme.md 
 
 # setup stylesheets (ignoring previous stylesheet templates from now on)
 rm -Rf stylus
