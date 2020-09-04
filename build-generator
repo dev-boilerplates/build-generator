@@ -24,6 +24,11 @@ cwd=$(pwd)
 
 # import relevant script
 case "$TYPE" in
+  svelte)
+    # set generator path
+    cd LOCATION
+    GENERATOR=generator--svelte
+    ;;
   typescript)
     # set generator path
     cd LOCATION
